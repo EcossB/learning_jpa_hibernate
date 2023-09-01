@@ -24,4 +24,11 @@ public class CategoriaDao {
         categoria = this.em.merge(categoria); // aqui estamos asegurandonos de que nos traiga el registro de manera managed
         this.em.remove(categoria); // asi se puede remover
     }
+
+    public Categoria consultarPorNombre(String nombre){
+        //1- crear el jpql para hacer el select
+        String jpql = "Select P from Categoria as P where P.nombre=:nombre";
+        //2- retornamo el createquery
+        return em.createQuery(jpql, Categoria.class).setParameter("nombre", nombre).getSingleResult();
+    }
 }
