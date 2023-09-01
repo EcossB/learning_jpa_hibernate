@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--En este archivo es donde se configura JPA-->
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.2"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence ">
+    <persistence-unit name="tienda" transaction-type="RESOURCE_LOCAL">
+
+        <!-- indicandole donde estan las clases que representan tablas de la db
+
+        Es importante entender que si no especificamos esto, hibernate va a tomar
+        todas las clases con la anotacion entity como clases que representan tablas en la db
+
+        por eso es importante indicarle donde estan las clases que representan las tablas.
+        -->
+        <class>com.latam.alura.tienda.modelo</class>
+        <properties>
+            <!--  driver o controlador que nos permite conectarnos a la base de datos.-->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:tienda"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            
+            <property name="hibernate.show_sql" value="true"/> <!-- Esto va a mostrar el query que se ejecuto-->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- va a indicar que crea la base datos-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
