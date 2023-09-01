@@ -17,7 +17,6 @@ public class Producto { //JPA entiende que el nombre de la clase es el mismo que
     private String nombre;
     private String descripcion;
     private BigDecimal precio;
-
     private LocalDate fechaDeRegistro = LocalDate.now();
     @ManyToOne //asi realizamos la relacion entre producto y categoria. muchos productos tiene una categoria Many to one.
     private Categoria categoria;
