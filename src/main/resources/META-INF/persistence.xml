@@ -17,7 +17,7 @@
         <properties>
             <!--  driver o controlador que nos permite conectarnos a la base de datos.-->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:tienda"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\erwin\OneDrive\Documentos\Programa ORACLE ONE\JPA"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             
