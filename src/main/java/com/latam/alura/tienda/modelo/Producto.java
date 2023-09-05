@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "productos") //indicandole el nombre de la db.
+@NamedQuery(name = "Producto.consultaDePrecio", query = "Select p.precio from Producto as p where p.nombre=:nombre")
 public class Producto { //JPA entiende que el nombre de la clase es el mismo que el de la tabla, en este caso no es asi.
     //mapeamento de nuestra tabla de base datos
 
@@ -18,7 +19,7 @@ public class Producto { //JPA entiende que el nombre de la clase es el mismo que
     private String descripcion;
     private BigDecimal precio;
     private LocalDate fechaDeRegistro = LocalDate.now();
-    @ManyToOne //asi realizamos la relacion entre producto y categoria. muchos productos tiene una categoria Many to one.
+    @ManyToOne(fetch = FetchType.LAZY  ) //asi realizamos la relacion entre producto y categoria. muchos productos tiene una categoria Many to one.
     private Categoria categoria;
 
     public Producto() {
