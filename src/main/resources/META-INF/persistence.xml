@@ -3,7 +3,7 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              version="2.2"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence ">
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="tienda" transaction-type="RESOURCE_LOCAL">
 
         <!-- indicandole donde estan las clases que representan tablas de la db
@@ -17,14 +17,15 @@
         <properties>
             <!--  driver o controlador que nos permite conectarnos a la base de datos.-->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\erwin\OneDrive\Documentos\Programa ORACLE ONE\JPA"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\erwin\OneDrive\Documentos\tienda\database"/>
+            <property name="javax.persistence.jdbc.user" value="sas"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true"/> <!-- Esto va a mostrar el query que se ejecuto-->
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/> <!-- va a indicar que crea la base datos-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
         </properties>
     </persistence-unit>
 </persistence>
